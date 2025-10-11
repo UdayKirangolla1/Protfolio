@@ -13,7 +13,7 @@ const projects = [
       "A personal portfolio website to showcase skills and projects, built with modern UI design, dark mode, and smooth animations.",
     image: "/port.png?height=300&width=500",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
-    
+
     githubUrl: "https://github.com/Fawaz-devs/Portfolio.git",
     featured: true,
   },
@@ -57,7 +57,7 @@ const projects = [
     githubUrl: "https://github.com/Fawaz-devs/COGNITIVE-ATTENDANCE-AND-BEHAVIOUR-ANALYSIS.git",
     featured: false,
   },
- 
+
 ]
 
 export function ProjectsSection() {
@@ -151,7 +151,7 @@ function ProjectCard({
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
           />
           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-              {/*<Button size="sm" variant="secondary" asChild>
+            {/*<Button size="sm" variant="secondary" asChild>
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Live Demo

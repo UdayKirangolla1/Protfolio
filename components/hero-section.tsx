@@ -7,9 +7,9 @@ import Image from "next/image"
 
 export function HeroSection() {
   const socialLinks = [
-    { icon: Github, href: "https://github.com/Fawaz-devs", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/johndoe", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:mohdfawaz2004@gmail.com", label: "Email" },
+    { icon: Github, href: "https://github.com/UdayKirangolla1", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/uday-kiran-554a9a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:udaykiran.golla28@gmail.com@gmail.com", label: "Email" },
   ]
 
   return (
@@ -28,7 +28,7 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            Hi, I'm <span className="gradient-text">Mohammed Fawaz Haneef</span>
+            Hi, I'm <span className="gradient-text">Golla Uday Kiran</span>
           </motion.h1>
 
           <motion.p
@@ -46,7 +46,7 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl"
           >
-            Full-Stack Engineer skilled in building end-to-end web applications using React, Node.js, and modern APIs. Experienced with both frontend UI development and backend architecture, including REST/GraphQL, SQL/NoSQL databases, and cloud deployment. 
+            Full-Stack Engineer skilled in building end-to-end web applications using React, Node.js, and modern APIs. Experienced with both frontend UI development and backend architecture, including REST/GraphQL, SQL/NoSQL databases, and cloud deployment.
             Passionate about clean code, performance, and solving real-world problems.
 
 
@@ -58,16 +58,16 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
-          ><a href = "/Fawaz_res.pdf" download>
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              <Download className="mr-2 h-4 w-4" />
-              Download Resume
-            </Button>
+          ><a href="https://drive.google.com/file/d/1ecXHPZzwkdIeqfIuwKk10HhgQPKNMnD7/view?usp=drivesdk" download>
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                <Download className="mr-2 h-4 w-4" />
+                Download Resume
+              </Button>
             </a>
-            <a href = "#projects">
-            <Button variant="outline" size="lg">
-              View My Work
-            </Button>
+            <a href="#projects">
+              <Button variant="outline" size="lg">
+                View My Work
+              </Button>
             </a>
           </motion.div>
 
@@ -104,8 +104,8 @@ export function HeroSection() {
           <motion.div whileHover={{ scale: 1.05 }} className="relative">
             <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-purple-200 dark:border-purple-800 shadow-2xl">
               <Image
-                src="/FAWAZ.jpg?height=320&width=320"
-                alt="Mohammed Fawaz Haneef"
+                src="/uday.jpg?height=320&width=320"
+                alt="Golla Uday Kiran"
                 width={320}
                 height={320}
                 className="w-full h-full object-cover"

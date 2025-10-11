@@ -15,14 +15,14 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "mohdfawaz2004@gmail.com",
-    href: "mohdfawaz2004@gmail.com",
+    value: "udaykiran.golla28@gmail.com",
+    href: "udaykiran.golla28@gmail.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+91 7702256143",
-    href: "tel:+917702256143",
+    value: "+91 8019850174",
+    href: "tel:+918019850174",
   },
   {
     icon: MapPin,

@@ -9,24 +9,24 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mohammed Fawaz Haneef - Full Stack Developer",
+  title: "Golla Uday Kiran - Full Stack Developer",
   description:
-    "Portfolio of Mohammed Fawaz Haneef, a passionate full-stack developer specializing in React, Next.js, and modern web technologies.",
+    "Portfolio of Golla Uday Kiran, a passionate full-stack developer specializing in React, Next.js, and modern web technologies.",
   keywords: ["portfolio", "developer", "react", "nextjs", "typescript", "web development"],
-  authors: [{ name: "Mohammed Fawaz Haneef" }],
+  authors: [{ name: "Golla Uday Kiran" }],
   openGraph: {
-    title: "Mohammed Fawaz Haneef - Full Stack Developer",
-    description: "Portfolio of Mohammed Fawaz Haneef, a passionate full-stack developer",
+    title: "Golla Uday Kiran - Full Stack Developer",
+    description: "Portfolio of Golla Uday Kiran, a passionate full-stack developer",
     url: "https://johndoe-portfolio.vercel.app",
-    siteName: "Mohammed Fawaz Haneef Portfolio",
+    siteName: "Golla Uday Kiran Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammed Fawaz Haneef - Full Stack Developer",
-    description: "Portfolio of Mohammed Fawaz Haneef, a passionate full-stack developer",
+    title: "Golla Uday Kiran - Full Stack Developer",
+    description: "Portfolio of Golla Uday Kiran, a passionate full-stack developer",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

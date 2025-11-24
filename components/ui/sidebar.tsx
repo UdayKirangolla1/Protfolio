@@ -7,6 +7,7 @@ import { PanelLeft } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
+import { filterProps } from "@/lib/filter-props"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
@@ -289,6 +290,7 @@ const SidebarRail = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button">
 >(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const { toggleSidebar } = useSidebar()
 
   return (
@@ -308,7 +310,7 @@ const SidebarRail = React.forwardRef<
         "[[data-side=right][data-collapsible=offcanvas]_&]:-left-2",
         className
       )}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -453,6 +455,7 @@ const SidebarGroupAction = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button"> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const Comp = asChild ? Slot : "button"
 
   return (
@@ -466,7 +469,7 @@ const SidebarGroupAction = React.forwardRef<
         "group-data-[collapsible=icon]:hidden",
         className
       )}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -538,8 +541,10 @@ const SidebarMenuButton = React.forwardRef<
   React.ComponentProps<"button"> & {
     asChild?: boolean
     isActive?: boolean
+    variant?: "default" | "outline"
+    size?: "default" | "sm" | "lg"
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
-  } & VariantProps<typeof sidebarMenuButtonVariants>
+  }
 >(
   (
     {
@@ -553,6 +558,7 @@ const SidebarMenuButton = React.forwardRef<
     },
     ref
   ) => {
+    const filteredProps = filterProps(props)
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
 
@@ -563,7 +569,7 @@ const SidebarMenuButton = React.forwardRef<
         data-size={size}
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
-        {...props}
+        {...filteredProps}
       />
     )
 
@@ -599,6 +605,7 @@ const SidebarMenuAction = React.forwardRef<
     showOnHover?: boolean
   }
 >(({ className, asChild = false, showOnHover = false, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const Comp = asChild ? Slot : "button"
 
   return (
@@ -614,10 +621,10 @@ const SidebarMenuAction = React.forwardRef<
         "peer-data-[size=lg]/menu-button:top-2.5",
         "group-data-[collapsible=icon]:hidden",
         showOnHover &&
-          "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground md:opacity-0",
+        "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground md:opacity-0",
         className
       )}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -713,6 +720,7 @@ const SidebarMenuSubButton = React.forwardRef<
     isActive?: boolean
   }
 >(({ asChild = false, size = "md", isActive, className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const Comp = asChild ? Slot : "a"
 
   return (
@@ -729,7 +737,7 @@ const SidebarMenuSubButton = React.forwardRef<
         "group-data-[collapsible=icon]:hidden",
         className
       )}
-      {...props}
+      {...filteredProps}
     />
   )
 })

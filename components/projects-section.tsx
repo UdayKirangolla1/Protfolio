@@ -14,50 +14,32 @@ const projects = [
     image: "/port.png?height=300&width=500",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
 
-    githubUrl: "https://github.com/Fawaz-devs/Portfolio.git",
+    githubUrl: "https://github.com/UdayKirangolla1/portfolio",
     featured: true,
   },
   {
-    title: "RESTful API for E-Commerce",
+    title: "Smart-Feedback-Collection-And-Analysis-System",
     description:
-      "A scalable and secure RESTful API for an e-commerce platform featuring user authentication, product management, cart, and order processing.",
-    image: "/placeholder.jpg?height=300&width=500",
-    technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "JWT", "Docker", "Render"],
-    liveUrl: "https://taskmanager-demo.vercel.app",
-    githubUrl: "https://github.com/Fawaz-devs/RESTful-API-for-E-Commerce.git",
-    featured: true,
-  },
-  {
-    title: "AI-Powered Developer Assistant",
-    description:
-      "A full-stack application that helps developers generate, explain, and refactor code using OpenAI's GPT API, with a responsive and interactive frontend.",
-    image: "/placeholder.svg?height=300&width=500",
-    technologies: ["React", "FastAPI", "TypeScript", "OpenAI API", "MongoDB", "Tailwind CSS"],
-    liveUrl: "https://weather-dashboard-demo.vercel.app",
-    githubUrl: "https://github.com/Fawaz-devs/FullStack-AI-Application.git",
-    featured: false,
-  },
-  {
-    title: "LANG-LENS",
-    description:
-      " This project is a simple Optical Character Recognition (OCR) tool that extracts text from images and allows the user to search for keywords within the extracted text. The application supports both English and Hindi text recognition using the easyocr library",
-    image: "/Langlens.png?height=300&width=500",
-    technologies: ["Streamlit", "OCR Model", "PIL", "Numpy", "Regex"],
+      "A full-stack feedback collection and analysis system that allows users to submit categorized feedback (Product/Services/Brand Perception) with AI-powered sentiment analysis and real-time data visualization through an admin dashboard.",
+    image: "/feedback.png?height=300&width=500",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Supabase"],
     liveUrl: "https://johndoe-portfolio.vercel.app",
-    githubUrl: "https://github.com/Fawaz-devs/hindi-english-ocr.git",
+    githubUrl: "https://github.com/UdayKirangolla1/Smart-Feedback-Collection-And-Analysis-System",
     featured: false,
   },
+  
   {
-    title: "CABA: Cognitive Attendance And Behaviour Analysis",
+    title: "Multilingual Mental Health Chatbot (Emotion-Aware Transformer Model)",
     description:
-      "Developed a Analysis system by Integrating face recgonition and emotion analysis that tracks the engagement of people during the event and also takes their behaviour inputs to understand the situation , helping in preventing threats, teacher student engagement , etc.. ",
-    image: "/CABA.png?height=300&width=500",
-    technologies: ["Flask", "Flask-login", "OpenCV", "Face Recognition", "DeepFace", "Pickle", "Numpy", "OS"],
-    liveUrl: "https://blog-platform-demo.vercel.app",
-    githubUrl: "https://github.com/Fawaz-devs/COGNITIVE-ATTENDANCE-AND-BEHAVIOUR-ANALYSIS.git",
+      "A multilingual mental health AI companion that provides empathetic emotional support through natural language conversations in multiple languages with interactive UI components and real-time sentiment analysis.",
+    image: "/chatbot.png?height=300&width=500",
+    technologies: ["React", "TypeScript", "Vite", "Lucide React", "Tailwind CSS","shadcn-ui"],
+    liveUrl: "https://weather-dashboard-demo.vercel.app",
+    githubUrl: "https://github.com/UdayKirangolla1/Multilingual-Mental-Health-Chatbot-Emotion-Aware-Transformer-Model-",
     featured: false,
   },
 
+ 
 ]
 
 export function ProjectsSection() {

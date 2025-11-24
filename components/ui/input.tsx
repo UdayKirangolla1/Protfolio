@@ -1,9 +1,12 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { filterProps } from "@/lib/filter-props"
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
+    const filteredProps = filterProps(props)
+
     return (
       <input
         type={type}
@@ -12,7 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
           className
         )}
         ref={ref}
-        {...props}
+        {...filteredProps}
       />
     )
   }

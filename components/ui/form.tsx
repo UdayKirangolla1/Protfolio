@@ -14,6 +14,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { filterProps } from "@/lib/filter-props"
 
 const Form = FormProvider
 
@@ -76,11 +77,12 @@ const FormItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const id = React.useId()
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn("space-y-2", className)} {...filteredProps} />
     </FormItemContext.Provider>
   )
 })
@@ -90,6 +92,7 @@ const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const { error, formItemId } = useFormField()
 
   return (
@@ -97,7 +100,7 @@ const FormLabel = React.forwardRef<
       ref={ref}
       className={cn(error && "text-destructive", className)}
       htmlFor={formItemId}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -107,6 +110,7 @@ const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
 >(({ ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
   return (
@@ -119,7 +123,7 @@ const FormControl = React.forwardRef<
           : `${formDescriptionId} ${formMessageId}`
       }
       aria-invalid={!!error}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -129,6 +133,7 @@ const FormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const { formDescriptionId } = useFormField()
 
   return (
@@ -136,7 +141,7 @@ const FormDescription = React.forwardRef<
       ref={ref}
       id={formDescriptionId}
       className={cn("text-sm text-muted-foreground", className)}
-      {...props}
+      {...filteredProps}
     />
   )
 })
@@ -146,6 +151,7 @@ const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message) : children
 
@@ -158,7 +164,7 @@ const FormMessage = React.forwardRef<
       ref={ref}
       id={formMessageId}
       className={cn("text-sm font-medium text-destructive", className)}
-      {...props}
+      {...filteredProps}
     >
       {body}
     </p>

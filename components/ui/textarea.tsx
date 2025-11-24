@@ -1,11 +1,14 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { filterProps } from "@/lib/filter-props"
 
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.ComponentProps<"textarea">
 >(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
+
   return (
     <textarea
       className={cn(
@@ -13,7 +16,7 @@ const Textarea = React.forwardRef<
         className
       )}
       ref={ref}
-      {...props}
+      {...filteredProps}
     />
   )
 })

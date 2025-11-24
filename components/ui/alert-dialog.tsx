@@ -5,6 +5,7 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { filterProps } from "@/lib/filter-props"
 
 const AlertDialog = AlertDialogPrimitive.Root
 
@@ -101,29 +102,37 @@ AlertDialogDescription.displayName =
 const AlertDialogAction = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Action
-    ref={ref}
-    className={cn(buttonVariants(), className)}
-    {...props}
-  />
-))
+>(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
+
+  return (
+    <AlertDialogPrimitive.Action
+      ref={ref}
+      className={cn(buttonVariants(), className)}
+      {...filteredProps}
+    />
+  )
+})
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 
 const AlertDialogCancel = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Cancel
-    ref={ref}
-    className={cn(
-      buttonVariants({ variant: "outline" }),
-      "mt-2 sm:mt-0",
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
+
+  return (
+    <AlertDialogPrimitive.Cancel
+      ref={ref}
+      className={cn(
+        buttonVariants({ variant: "outline" }),
+        "mt-2 sm:mt-0",
+        className
+      )}
+      {...filteredProps}
+    />
+  )
+})
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
 
 export {

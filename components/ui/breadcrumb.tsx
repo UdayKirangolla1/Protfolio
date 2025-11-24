@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { filterProps } from "@/lib/filter-props"
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -45,13 +46,14 @@ const BreadcrumbLink = React.forwardRef<
     asChild?: boolean
   }
 >(({ asChild, className, ...props }, ref) => {
+  const filteredProps = filterProps(props)
   const Comp = asChild ? Slot : "a"
 
   return (
     <Comp
       ref={ref}
       className={cn("transition-colors hover:text-foreground", className)}
-      {...props}
+      {...filteredProps}
     />
   )
 })

@@ -58,7 +58,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
-          ><a href="https://drive.google.com/file/d/1ecXHPZzwkdIeqfIuwKk10HhgQPKNMnD7/view?usp=drivesdk" download>
+          ><a href="https://drive.google.com/file/d/1x7lEbBVDhIgJlA_l6r_AfByPQDaifsVP/view?usp=drivesdk" download>
               <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
